@@ -31,20 +31,20 @@
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/source/img/xui_ins.png"
+                     data-src="/../img/xui_ins.png"
                       alt="1"
                 ></p>
 <h3 id="2-2-登录x-ui"><a href="#2-2-登录x-ui" class="headerlink" title="2.2 登录x-ui"></a>2.2 登录x-ui</h3><p>安装完成之后登录面板 在浏览器输入(VPS的IP:端口)(例如:<kbd>252.16.12.15:1019</kbd>)<br><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/source/img/xui-login.png"
-                      alt="6"
+                     data-src="/../img/xui-login.png"
+                      alt="2"
                 ></p>
 <p>输入刚刚设置的账号与密码登录,就会看到如下界面<br><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/source/img/xui-panel.png"
-                      alt="2"
+                     data-src="/../img/xui-panel.png"
+                      alt="3"
                 ></p>
 <h3 id="2-3-申请SSL证书"><a href="#2-3-申请SSL证书" class="headerlink" title="2.3 申请SSL证书"></a>2.3 申请SSL证书</h3><blockquote>
 <p>此步骤需要你的</p>
@@ -55,8 +55,8 @@
 <p>控制台输入<kbd>x-ui</kbd><br><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/source/img/xui-list.png"
-                      alt="3"
+                     data-src="/../img/xui-list.png"
+                      alt="4"
                 ><br>输入<kbd>16.运行一键申请SSL证书</kbd>按照提示操作即可.</p>
 <p>自动安装完成之后你会得到两个文件</p>
 <p><kbd>xxxx.cer</kbd><br><kbd>xxxx.key</kbd> </p>
@@ -65,7 +65,7 @@
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../img/xui-ssl.png"
-                      alt="4"
+                      alt="5"
                 ></p>
 <p>保存配置, 重启面板</p>
 <h3 id="2-3-添加入站协议"><a href="#2-3-添加入站协议" class="headerlink" title="2.3 添加入站协议"></a>2.3 添加入站协议</h3><blockquote>
@@ -79,7 +79,7 @@
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../img/xui-add.png"
-                      alt="5"
+                      alt="6"
                 ></p>
 <p>点击, 添加, 并启用.</p>
 <p>到这里一个基于<kbd>Vless+ws+tls</kbd>的节点创建完成, 你可以通过二维码或者在详细信息里复制链接<br>将节点添加至你的小飞机, openclash, v2ray等等支持vless协议的软件里</p>
