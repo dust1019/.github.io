@@ -55,7 +55,7 @@
     <script id="hexo-configurations">
     let Global = window.Global || {};
     Global.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
-    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":["","Lv 29"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":false,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#afbee0","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true,"open_graph":true},"home_banner":{"enable":true,"image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"不 知 不 觉","subtitle":{"text":["与 梦 并 肩"],"typing_speed":50,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":false,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"audios":[{"name":null,"artist":null,"url":null,"cover":null},{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.1.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":null},"Archives":{"path":"/archives","icon":null},"More":{"icon":null,"submenus":{"Friends Link":"/links/","Tags":"/tags/"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"cloud"},"home":{"sidebar":{"enable":true,"position":"left","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}}};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":["","Lv 29"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":false,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#afbee0","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true,"open_graph":true},"home_banner":{"enable":true,"image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"不 知 不 觉","subtitle":{"text":["与 梦 并 肩"],"typing_speed":50,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":false,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"audios":[{"name":null,"artist":null,"url":null,"cover":null},{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.1.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":null},"Categories":{"path":"/categories","icon":null},"Archives":{"path":"/archives","icon":null},"More":{"icon":null,"submenus":{"Tags":"/tags/","Friends Link":"/links/"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"cloud"},"home":{"sidebar":{"enable":true,"position":"left","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}}};
     Global.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
     
@@ -163,6 +163,20 @@
                             <li class="navbar-item">
                                 <!-- Menu -->
                                 <a class="" 
+                                    href="/categories"  >
+                                    
+                                        
+                                        CATEGORIES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
                                     href="/archives"  >
                                     
                                         
@@ -188,12 +202,12 @@
                                     <ul class="sub-menu">
                                     
                                         <li>
-                                        <a href="/links/">FRIENDS LINK
+                                        <a href="/tags/">TAGS
                                         </a>
                                         </li>
                                     
                                         <li>
-                                        <a href="/tags/">TAGS
+                                        <a href="/links/">FRIENDS LINK
                                         </a>
                                         </li>
                                     
@@ -240,6 +254,19 @@
                 
                     <li class="drawer-navbar-item flex-center">
                         <a class="" 
+                        href="/categories"  >
+                             
+                                
+                                CATEGORIES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
                         href="/archives"  >
                              
                                 
@@ -264,11 +291,11 @@
                               
                         
                             <li class="dropdown-item flex-center">
-                                <a class="dropdown-item" href="/links/">FRIENDS LINK</a>
+                                <a class="dropdown-item" href="/tags/">TAGS</a>
                             </li>
                         
                             <li class="dropdown-item flex-center">
-                                <a class="dropdown-item" href="/tags/">TAGS</a>
+                                <a class="dropdown-item" href="/links/">FRIENDS LINK</a>
                             </li>
                         
                     
@@ -300,11 +327,11 @@
             </div>
             <div class="statistics">
                 <a class="item" href="/tags">
-                    <div class="number">1</div>
+                    <div class="number">2</div>
                     <div class="label">Tags</div>
                 </a>
                 <a class="item" href="/categories">
-                    <div class="number">0</div>
+                    <div class="number">1</div>
                     <div class="label">Category</div>
                 </a>
                 <a class="item" href="/archives">
@@ -359,6 +386,18 @@
             </span>
         </span>
         
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
         
             <span class="home-article-tag">
                 <i class="fa-solid fa-tags"></i>&nbsp;
@@ -366,7 +405,7 @@
                     
                         <li>
                             
-                            <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+                            <a href="/tags/Git/">Git</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -413,6 +452,18 @@
             </span>
         </span>
         
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
         
             <span class="home-article-tag">
                 <i class="fa-solid fa-tags"></i>&nbsp;
@@ -420,7 +471,7 @@
                     
                         <li>
                             
-                            <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+                            <a href="/tags/VPS/">VPS</a>&nbsp;
                         </li>
                     
                 </ul>

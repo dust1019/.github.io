@@ -85,8 +85,11 @@
 <div class="note-large notel-default"><div class="notel-title"><p>Tip</p>
 </div><div class="notel-content"><p>若发现节点不可用, 请先检查VPS的防火墙是否放行节点的端口</p>
  </div></div>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
       <tags>
-        <tag>技术</tag>
+        <tag>VPS</tag>
       </tags>
   </entry>
   <entry>
@@ -100,8 +103,11 @@
 <h2 id="3-git查看ssh公钥的方法"><a href="#3-git查看ssh公钥的方法" class="headerlink" title="3. git查看ssh公钥的方法"></a>3. git查看ssh公钥的方法</h2><p>通过git bash命令窗口<br><code>cat ~/.ssh/id_rsa.pub</code></p>
 <p>或者在 <code>C:\Users\用户名\.ssh</code>文件夹下, 用记事本打开<code>id_rsa.pub</code></p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
       <tags>
-        <tag>技术</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
 </search>
