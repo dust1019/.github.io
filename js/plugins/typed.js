@@ -1,1 +1,30 @@
-Global.initTyped=e=>{var t=[];for(const s of Global.theme_config.home_banner.subtitle.text)t.push(s);var a=Global.theme_config.home_banner.subtitle.typing_speed,n=Global.theme_config.home_banner.subtitle.backing_speed,l=Global.theme_config.home_banner.subtitle.backing_delay,o=Global.theme_config.home_banner.subtitle.starting_delay,b=Global.theme_config.home_banner.subtitle.loop,i=Global.theme_config.home_banner.subtitle.smart_backspace;document.getElementById(e)&&new Typed("#"+e,{strings:t,typeSpeed:a||100,smartBackspace:i||!1,backSpeed:n||80,backDelay:l||1500,loop:b||!1,startDelay:o||500})};
+/*
+author: @jiangwen5945
+date: 2023-03-10
+*/
+
+Global.initTyped = (id) => {
+    const sentenceList = [];
+    for (const t of Global.theme_config.home_banner.subtitle.text) {
+      sentenceList.push(t);
+    }
+    const usrTypeSpeed = Global.theme_config.home_banner.subtitle.typing_speed;
+    const usrBackSpeed = Global.theme_config.home_banner.subtitle.backing_speed;
+    const usrBackDelay = Global.theme_config.home_banner.subtitle.backing_delay;
+    const usrStartDelay = Global.theme_config.home_banner.subtitle.starting_delay;
+    const usrLoop = Global.theme_config.home_banner.subtitle.loop;
+    const usrSmartBackspace = Global.theme_config.home_banner.subtitle.smart_backspace;
+
+    if(document.getElementById(id)){
+      const st = new Typed("#"+id, {
+        strings: sentenceList,
+        typeSpeed: usrTypeSpeed || 100,//打字的速度
+        smartBackspace: usrSmartBackspace || false, // 开启智能退格 默认false
+        backSpeed: usrBackSpeed || 80,//后退速度
+        backDelay: usrBackDelay || 1500,//后退延迟
+        loop: usrLoop || false,//是否循环
+        startDelay: usrStartDelay || 500,//起始时间
+        // cursorChar: '♡', // 光标
+      });
+    }
+}
