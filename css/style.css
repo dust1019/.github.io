@@ -3102,6 +3102,23 @@ pre .deletion {
 .progress-bar-container .pjax-progress-icon.show {
   visibility: visible;
 }
+.progress-bar-container .scroll-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  visibility: hidden;
+  z-index: 1007;
+  background: var(--primary-color);
+  transition-property: color, background, box-shadow, border-color, width;
+  transition-delay: 0s, 0s, 0s, 0s, 0s;
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.1s;
+  transition-timing-function: ease, ease, ease, ease, linear;
+}
+.progress-bar-container .scroll-progress-bar.hide {
+  display: none !important;
+}
 :root {
   --background-color: #fff;
   --background-color-transparent: rgba(255,255,255,0.6);
@@ -3383,6 +3400,27 @@ pre .deletion {
 .navbar-shrink .navbar-container .navbar-content .left {
   transform: scale(0.72);
   transform-origin: left;
+}
+.navbar-container .navbar-content .left .logo-image {
+  width: 46px;
+  height: 46px;
+  margin-right: 8px;
+}
+@media (max-width: 780px) {
+  .navbar-container .navbar-content .left .logo-image {
+    width: 41.4px;
+    height: 41.4px;
+  }
+}
+@media (max-width: 500px) {
+  .navbar-container .navbar-content .left .logo-image {
+    width: 36.800000000000004px;
+    height: 36.800000000000004px;
+  }
+}
+.navbar-container .navbar-content .left .logo-image img {
+  border-radius: 6px;
+  width: 100%;
 }
 .navbar-container .navbar-content .left .logo-title {
   font-size: 2rem;
