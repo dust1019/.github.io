@@ -27,7 +27,7 @@
 <meta property="og:description" content="手把手将hexo部署到自己的云服务器">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-04-11T16:39:18.000Z">
-<meta property="article:modified_time" content="2023-04-11T06:12:19.891Z">
+<meta property="article:modified_time" content="2023-04-11T06:15:31.682Z">
 <meta property="article:author" content="Dust">
 <meta property="article:tag" content="HEXO">
 <meta name="twitter:card" content="summary">
@@ -349,8 +349,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-04-11 02:12:19</span>
-            <span class="mobile">2023-04-11 02:12</span>
+            <span class="desktop">2023-04-11 02:15:31</span>
+            <span class="mobile">2023-04-11 02:15</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -383,7 +383,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>494 Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>495 Words</span>
         </span>
     
     
@@ -400,8 +400,12 @@
             
 
             <div class="article-content markdown-body">
-                <h2 id="1-云服务器"><a href="#1-云服务器" class="headerlink" title="1. 云服务器"></a>1. 云服务器</h2><h3 id="1-1-安装配置git账户-已安装跳过"><a href="#1-1-安装配置git账户-已安装跳过" class="headerlink" title="1.1 安装配置git账户 (已安装跳过)"></a>1.1 安装配置git账户 (已安装跳过)</h3><p>安装git<br><code>yum install git</code></p>
-<p>添加git账户<br><code>adduser git</code></p>
+                <h2 id="1-云服务器"><a href="#1-云服务器" class="headerlink" title="1. 云服务器"></a>1. 云服务器</h2><h3 id="1-1-安装配置git账户-已安装跳过"><a href="#1-1-安装配置git账户-已安装跳过" class="headerlink" title="1.1 安装配置git账户 (已安装跳过)"></a>1.1 安装配置git账户 (已安装跳过)</h3><p>安装git</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install git</span><br></pre></td></tr></table></figure></div>
+
+<p>添加git账户</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser git</span><br></pre></td></tr></table></figure></div>
+
 <p>赋予用户权限</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 740 /etc/sudoers</span><br><span class="line">vi /etc/sudoers</span><br></pre></td></tr></table></figure></div>
 
@@ -411,7 +415,7 @@
 <p>修改 sudoers 文件权限</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd git</span><br></pre></td></tr></table></figure></div>
 
-<p>给 git 用户添加 SSH 秘钥（如何生成可参考上一篇<a href="/2023/04/05/GIT%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E6%96%B0%E7%9A%84SSH%E5%AF%86%E9%92%A5/">blog</a>)</p>
+<p>给 git 用户添加 SSH 秘钥（如何生成可参考上一篇<a href="/2023/04/05/GIT%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E6%96%B0%E7%9A%84SSH%E5%AF%86%E9%92%A5/">blog</a>）</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">su - git</span><br><span class="line">mkdir -p ~/.ssh</span><br><span class="line">touch ~/.ssh/authorized_keys</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br><span class="line">chmod 700 ~/.ssh</span><br><span class="line">vi ~/.ssh/authorized_keys  #将ssh密钥粘贴进去</span><br></pre></td></tr></table></figure></div>
 
 <p>在本地打开一个终端，以 ssh 的方式登录云服务器</p>
@@ -421,7 +425,7 @@
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line">cd /home/git</span><br><span class="line">git init --bare blog.git  #在/home/git下创建新仓库blog.git</span><br><span class="line">chown git:git -R blog.git #给予git用户权限</span><br></pre></td></tr></table></figure></div>
 
 
-<p>在 blog.git&#x2F;hooks 文件夹下创建一个 post-receive 钩子，把提交到 git 仓库的文件同步到 www&#x2F;blog文件夹中(或者是你指定的文件夹，替换<code>/www/blog</code>即可)</p>
+<p>在 blog.git&#x2F;hooks 文件夹下创建一个 post-receive 钩子，把提交到 git 仓库的文件同步到 www&#x2F;blog文件夹中(或者是你指定的文件夹，替换 <code>/www/blog </code> 即可)</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd blog.git/hooks</span><br><span class="line">vi post-receive</span><br></pre></td></tr></table></figure></div>
 
 
@@ -432,7 +436,7 @@
 <p>授予 post-receive 文件可执行权限</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /home/git/blog.git/hooks/post-receive</span><br></pre></td></tr></table></figure></div>
 
-<p>授予git账户操作<code>/www/blog</code>权限</p>
+<p>授予git账户操作 <code>/www/blog</code> 权限</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown git:git /www/blog</span><br><span class="line">chmod 775 /www/blog</span><br></pre></td></tr></table></figure></div>
 
 
@@ -442,9 +446,7 @@
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: git@你的ip地址:/home/git/blog.git    #仓库地址</span><br><span class="line">    branch: master    #分支</span><br></pre></td></tr></table></figure></div>
 
 <p>打开控制台，上传本地文件之服务器</p>
-<pre><code>hexo clean
-hexo d
-</code></pre>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></div>
 
             </div>
 
