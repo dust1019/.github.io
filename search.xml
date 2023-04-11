@@ -142,7 +142,7 @@
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">su - git</span><br><span class="line">mkdir -p ~/.ssh</span><br><span class="line">touch ~/.ssh/authorized_keys</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br><span class="line">chmod 700 ~/.ssh</span><br><span class="line">vi ~/.ssh/authorized_keys  #将ssh密钥粘贴进去</span><br></pre></td></tr></table></figure></div>
 
 <p>在本地打开一个终端，以 ssh 的方式登录云服务器</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 输入密码 即可成功登录云服务器</span><br><span class="line">ssh -v git@你的 ip 地址  </span><br><span class="line"># 此时是不需要密码登录的，如果提示输入密码，请删除本地密钥，重新从1.1配置</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 输入密码 即可成功登录云服务器</span><br><span class="line">ssh -v git@你的 ip 地址  </span><br><span class="line"># 此时是不需要密码登录的，如果提示输入密码，请删除本地密钥，重新从2.1配置</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="2-2-创建git仓库"><a href="#2-2-创建git仓库" class="headerlink" title="2.2 创建git仓库"></a>2.2 创建git仓库</h3><p>创建一个 git 仓库，新建一个 post-receive 文件，用来存储本地的提交</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">su root</span><br><span class="line">cd /home/git</span><br><span class="line">git init --bare blog.git  #在/home/git下创建新仓库blog.git</span><br><span class="line">chown git:git -R blog.git #给予git用户权限</span><br></pre></td></tr></table></figure></div>
