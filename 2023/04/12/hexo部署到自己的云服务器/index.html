@@ -27,7 +27,7 @@
 <meta property="og:description" content="手把手将hexo部署到自己的云服务器">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-04-11T16:39:18.000Z">
-<meta property="article:modified_time" content="2023-04-11T05:53:24.277Z">
+<meta property="article:modified_time" content="2023-04-11T06:12:19.891Z">
 <meta property="article:author" content="Dust">
 <meta property="article:tag" content="HEXO">
 <meta name="twitter:card" content="summary">
@@ -349,8 +349,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-04-11 01:53:24</span>
-            <span class="mobile">2023-04-11 01:53</span>
+            <span class="desktop">2023-04-11 02:12:19</span>
+            <span class="mobile">2023-04-11 02:12</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -383,12 +383,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>438 Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>494 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>2 Mins</span>
         </span>
     
     
@@ -408,32 +408,43 @@
 <p>输入 i 进入 insert 模式 ，找到 <code>root ALL=(ALL) ALL </code>，在其下方加入一行 <code>git ALL=(ALL) ALL</code></p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root    ALL=(ALL)       ALL</span><br><span class="line">// 在这里加入代码</span><br><span class="line">git     ALL=(ALL)       ALL</span><br></pre></td></tr></table></figure></div>
 <p>按下 ESC, 输入wq, 保存退出</p>
-<p>修改 sudoers 文件权限<br><code>sudo passwd git</code></p>
+<p>修改 sudoers 文件权限</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd git</span><br></pre></td></tr></table></figure></div>
+
 <p>给 git 用户添加 SSH 秘钥（如何生成可参考上一篇<a href="/2023/04/05/GIT%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E6%96%B0%E7%9A%84SSH%E5%AF%86%E9%92%A5/">blog</a>)</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">su - git</span><br><span class="line">mkdir -p ~/.ssh</span><br><span class="line">touch ~/.ssh/authorized_keys</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br><span class="line">chmod 700 ~/.ssh</span><br><span class="line">vi ~/.ssh/authorized_keys    #将ssh密钥粘贴进去</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">su - git</span><br><span class="line">mkdir -p ~/.ssh</span><br><span class="line">touch ~/.ssh/authorized_keys</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br><span class="line">chmod 700 ~/.ssh</span><br><span class="line">vi ~/.ssh/authorized_keys  #将ssh密钥粘贴进去</span><br></pre></td></tr></table></figure></div>
 
 <p>在本地打开一个终端，以 ssh 的方式登录云服务器</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 输入密码 即可成功登录云服务器</span><br><span class="line">ssh -v git@你的 ip 地址  </span><br><span class="line"># 此时是不需要密码登录的，如果提示输入密码，请删除本地密钥，重新从上一步配置</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 输入密码 即可成功登录云服务器</span><br><span class="line">ssh -v git@你的 ip 地址  </span><br><span class="line"># 此时是不需要密码登录的，如果提示输入密码，请删除本地密钥，重新从1.1配置</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="1-2-创建git仓库"><a href="#1-2-创建git仓库" class="headerlink" title="1.2 创建git仓库"></a>1.2 创建git仓库</h3><p>创建一个 git 仓库，新建一个 post-receive 文件，用来存储本地的提交</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line">cd /home/git</span><br><span class="line">git init --bare blog.git  #在/home/git下创建新仓库blog.git</span><br><span class="line">chown git:git -R blog.git #给予git用户权限</span><br></pre></td></tr></table></figure></div>
 
 
-<p>在 blog.git&#x2F;hooks 文件夹下创建一个 post-receive 钩子，把提交到 git 仓库的文件同步到 home&#x2F;hexo文件夹中(或者是指定的文件夹)</p>
+<p>在 blog.git&#x2F;hooks 文件夹下创建一个 post-receive 钩子，把提交到 git 仓库的文件同步到 www&#x2F;blog文件夹中(或者是你指定的文件夹，替换<code>/www/blog</code>即可)</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd blog.git/hooks</span><br><span class="line">vi post-receive</span><br></pre></td></tr></table></figure></div>
 
 
 <p>在 post-receive 文件中输入以下代码</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --work-tree=/home/hexo --git-dir=/home/git/blog.git checkout -f</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --work-tree=/www/blog --git-dir=/home/git/blog.git checkout -f #替换`/www/blog`为你指定的文件夹</span><br></pre></td></tr></table></figure></div>
 
 
 <p>授予 post-receive 文件可执行权限</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /home/git/blog.git/hooks/post-receive</span><br></pre></td></tr></table></figure></div>
 
+<p>授予git账户操作<code>/www/blog</code>权限</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown git:git /www/blog</span><br><span class="line">chmod 775 /www/blog</span><br></pre></td></tr></table></figure></div>
+
+
 <p>至此服务端已经配置完成。</p>
 <hr>
 <h2 id="2-本地电脑配置HEXO"><a href="#2-本地电脑配置HEXO" class="headerlink" title="2. 本地电脑配置HEXO"></a>2. 本地电脑配置HEXO</h2><p>打开 hexo 的配置文件 _config.yml 修改 Deployment 位置的配置</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: git@你的ip地址:/home/git/blog.git    #仓库地址</span><br><span class="line">    branch: master    #分支</span><br></pre></td></tr></table></figure></div>
+
+<p>打开控制台，上传本地文件之服务器</p>
+<pre><code>hexo clean
+hexo d
+</code></pre>
 
             </div>
 
