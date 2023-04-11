@@ -142,8 +142,8 @@
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd blog.git/hooks</span><br><span class="line">vi post-receive</span><br></pre></td></tr></table></figure></div>
 
 
-<p>在 post-receive 文件中输入以下代码</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --work-tree=/www/blog --git-dir=/home/git/blog.git checkout -f #替换`/www/blog`为你指定的文件夹</span><br></pre></td></tr></table></figure></div>
+<p>在 post-receive 文件中输入以下代码  替换 <code>/www/blog</code> 为你指定的文件夹</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --work-tree=/www/blog --git-dir=/home/git/blog.git checkout -f </span><br></pre></td></tr></table></figure></div>
 
 
 <p>授予 post-receive 文件可执行权限</p>
