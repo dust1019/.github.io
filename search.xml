@@ -113,7 +113,17 @@
   <entry>
     <title>HEXO部署到自己的云服务器</title>
     <url>/2023/04/12/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
-    <content><![CDATA[<h2 id="1-云服务器"><a href="#1-云服务器" class="headerlink" title="1. 云服务器"></a>1. 云服务器</h2><h3 id="1-1-安装配置git账户-已安装跳过"><a href="#1-1-安装配置git账户-已安装跳过" class="headerlink" title="1.1 安装配置git账户 (已安装跳过)"></a>1.1 安装配置git账户 (已安装跳过)</h3><p>安装git</p>
+    <content><![CDATA[<p><strong>概览</strong><br>    1. 安装AA面板<br>    2. 云服务器<br>    3. 本地配置</p>
+<h2 id="1-安装AA面板（宝塔的海外版）"><a href="#1-安装AA面板（宝塔的海外版）" class="headerlink" title="1. 安装AA面板（宝塔的海外版）"></a>1. 安装AA面板（宝塔的海外版）</h2><ol>
+<li>1 国内的宝塔现在必须要注册，所以我用了海外版，这里我列出了两个版本，根据喜好二选一</li>
+</ol>
+<p>centos 海外版英文</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://www.aapanel.com/script/install_6.0_en.sh &amp;&amp; bash install.sh 93684c35</span><br></pre></td></tr></table></figure></div>
+
+<p>centos 国内版中文</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh https://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh ed8484bec</span><br></pre></td></tr></table></figure></div>
+<p>根据提示安装即可</p>
+<h2 id="2-云服务器"><a href="#2-云服务器" class="headerlink" title="2. 云服务器"></a>2. 云服务器</h2><h3 id="2-1-安装配置git账户-已安装跳过"><a href="#2-1-安装配置git账户-已安装跳过" class="headerlink" title="2.1 安装配置git账户 (已安装跳过)"></a>2.1 安装配置git账户 (已安装跳过)</h3><p>安装git</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install git</span><br></pre></td></tr></table></figure></div>
 
 <p>添加git账户</p>
@@ -134,7 +144,7 @@
 <p>在本地打开一个终端，以 ssh 的方式登录云服务器</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 输入密码 即可成功登录云服务器</span><br><span class="line">ssh -v git@你的 ip 地址  </span><br><span class="line"># 此时是不需要密码登录的，如果提示输入密码，请删除本地密钥，重新从1.1配置</span><br></pre></td></tr></table></figure></div>
 
-<h3 id="1-2-创建git仓库"><a href="#1-2-创建git仓库" class="headerlink" title="1.2 创建git仓库"></a>1.2 创建git仓库</h3><p>创建一个 git 仓库，新建一个 post-receive 文件，用来存储本地的提交</p>
+<h3 id="2-2-创建git仓库"><a href="#2-2-创建git仓库" class="headerlink" title="2.2 创建git仓库"></a>2.2 创建git仓库</h3><p>创建一个 git 仓库，新建一个 post-receive 文件，用来存储本地的提交</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">su root</span><br><span class="line">cd /home/git</span><br><span class="line">git init --bare blog.git  #在/home/git下创建新仓库blog.git</span><br><span class="line">chown git:git -R blog.git #给予git用户权限</span><br></pre></td></tr></table></figure></div>
 
 
@@ -155,7 +165,7 @@
 
 <p>至此服务端已经配置完成。</p>
 <hr>
-<h2 id="2-本地电脑配置HEXO"><a href="#2-本地电脑配置HEXO" class="headerlink" title="2. 本地电脑配置HEXO"></a>2. 本地电脑配置HEXO</h2><p>打开 hexo 的配置文件 _config.yml 修改 Deployment 位置的配置</p>
+<h2 id="3-本地电脑配置HEXO"><a href="#3-本地电脑配置HEXO" class="headerlink" title="3. 本地电脑配置HEXO"></a>3. 本地电脑配置HEXO</h2><p>打开 hexo 的配置文件 _config.yml 修改 Deployment 位置的配置</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: git@你的ip地址:/home/git/blog.git    #仓库地址</span><br><span class="line">    branch: master    #分支</span><br></pre></td></tr></table></figure></div>
 
 <p>打开控制台，上传本地文件之服务器</p>
