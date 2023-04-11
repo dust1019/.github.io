@@ -27,7 +27,7 @@
 <meta property="og:description" content="手把手将hexo部署到自己的云服务器">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-04-11T16:39:18.000Z">
-<meta property="article:modified_time" content="2023-04-11T05:43:08.194Z">
+<meta property="article:modified_time" content="2023-04-11T05:53:24.277Z">
 <meta property="article:author" content="Dust">
 <meta property="article:tag" content="HEXO">
 <meta name="twitter:card" content="summary">
@@ -349,8 +349,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-04-11 01:43:08</span>
-            <span class="mobile">2023-04-11 01:43</span>
+            <span class="desktop">2023-04-11 01:53:24</span>
+            <span class="mobile">2023-04-11 01:53</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -409,7 +409,7 @@
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root    ALL=(ALL)       ALL</span><br><span class="line">// 在这里加入代码</span><br><span class="line">git     ALL=(ALL)       ALL</span><br></pre></td></tr></table></figure></div>
 <p>按下 ESC, 输入wq, 保存退出</p>
 <p>修改 sudoers 文件权限<br><code>sudo passwd git</code></p>
-<p>给 git 用户添加 SSH 秘钥（如何生成可参考上一篇<a href="/2023/04/05/GIT%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E6%96%B0%E7%9A%84SSH%E5%AF%86%E9%92%A5/">blog</a></p>
+<p>给 git 用户添加 SSH 秘钥（如何生成可参考上一篇<a href="/2023/04/05/GIT%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E6%96%B0%E7%9A%84SSH%E5%AF%86%E9%92%A5/">blog</a>)</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">su - git</span><br><span class="line">mkdir -p ~/.ssh</span><br><span class="line">touch ~/.ssh/authorized_keys</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br><span class="line">chmod 700 ~/.ssh</span><br><span class="line">vi ~/.ssh/authorized_keys    #将ssh密钥粘贴进去</span><br></pre></td></tr></table></figure></div>
 
 <p>在本地打开一个终端，以 ssh 的方式登录云服务器</p>
