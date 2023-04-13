@@ -93,6 +93,24 @@
       </tags>
   </entry>
   <entry>
+    <title>git如何生成新的SSH公钥</title>
+    <url>/2023/04/05/GIT%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E6%96%B0%E7%9A%84SSH%E5%AF%86%E9%92%A5/</url>
+    <content><![CDATA[<h2 id="1-在Windows-PowerShell输入以下命令"><a href="#1-在Windows-PowerShell输入以下命令" class="headerlink" title="1. 在Windows PowerShell输入以下命令"></a>1. 在Windows PowerShell输入以下命令</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 配置用户名   将用户名和邮箱替换为你自己的</span><br><span class="line">git config --global user.name &quot;dust&quot;</span><br><span class="line"># 配置邮箱</span><br><span class="line">git config --global user.email &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure></div>
+<p>以上命令执行结束后，可用 <code>git config --global --list</code> 命令查看配置是否成功</p>
+<h2 id="2-生成公钥"><a href="#2-生成公钥" class="headerlink" title="2. 生成公钥"></a>2. 生成公钥</h2><p>然后接着输入</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &#x27;email@gmail.com&#x27;  #将邮箱替换为你自己的</span><br></pre></td></tr></table></figure></div>
+<p>过程可以直接按 ENTER 一切默认即可</p>
+<h2 id="3-git查看ssh公钥的方法"><a href="#3-git查看ssh公钥的方法" class="headerlink" title="3. git查看ssh公钥的方法"></a>3. git查看ssh公钥的方法</h2><p>通过git bash命令窗口<br><code>cat ~/.ssh/id_rsa.pub</code></p>
+<p>或者在 <code>C:\Users\用户名\.ssh</code>文件夹下, 用记事本打开<code>id_rsa.pub</code></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HEXO部署到自己的云服务器</title>
     <url>/2023/04/12/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
     <content><![CDATA[<p><strong>概览</strong><br>    1. 安装AA面板<br>    2. 云服务器<br>    3. 本地配置</p>
@@ -158,24 +176,6 @@
       </categories>
       <tags>
         <tag>HEXO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git如何生成新的SSH公钥</title>
-    <url>/2023/04/05/GIT%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E6%96%B0%E7%9A%84SSH%E5%AF%86%E9%92%A5/</url>
-    <content><![CDATA[<h2 id="1-在Windows-PowerShell输入以下命令"><a href="#1-在Windows-PowerShell输入以下命令" class="headerlink" title="1. 在Windows PowerShell输入以下命令"></a>1. 在Windows PowerShell输入以下命令</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 配置用户名   将用户名和邮箱替换为你自己的</span><br><span class="line">git config --global user.name &quot;dust&quot;</span><br><span class="line"># 配置邮箱</span><br><span class="line">git config --global user.email &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure></div>
-<p>以上命令执行结束后，可用 <code>git config --global --list</code> 命令查看配置是否成功</p>
-<h2 id="2-生成公钥"><a href="#2-生成公钥" class="headerlink" title="2. 生成公钥"></a>2. 生成公钥</h2><p>然后接着输入</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &#x27;email@gmail.com&#x27;  #将邮箱替换为你自己的</span><br></pre></td></tr></table></figure></div>
-<p>过程可以直接按 ENTER 一切默认即可</p>
-<h2 id="3-git查看ssh公钥的方法"><a href="#3-git查看ssh公钥的方法" class="headerlink" title="3. git查看ssh公钥的方法"></a>3. git查看ssh公钥的方法</h2><p>通过git bash命令窗口<br><code>cat ~/.ssh/id_rsa.pub</code></p>
-<p>或者在 <code>C:\Users\用户名\.ssh</code>文件夹下, 用记事本打开<code>id_rsa.pub</code></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
       </tags>
   </entry>
 </search>
